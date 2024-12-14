@@ -9,5 +9,6 @@ public interface IUtilisateurService {
          void removeUtilisateur(Long idutilisateur);
          Utilisateur modifyUtilisateur(Utilisateur utilisateur);
          String login(String email, String password);
+     Utilisateur retrieveUtilisateur(Long id);
 
 }

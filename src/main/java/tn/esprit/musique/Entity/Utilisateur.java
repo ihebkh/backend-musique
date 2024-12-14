@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -21,5 +23,7 @@ public class Utilisateur {
     String password;
     @Enumerated(EnumType.STRING)
     Role role;
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+    List<Evenement> evenements ;
 
 }

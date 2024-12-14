@@ -2,6 +2,7 @@ package tn.esprit.musique.Service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import tn.esprit.musique.Entity.Evenement;
 import tn.esprit.musique.Entity.Utilisateur;
 import tn.esprit.musique.Repository.UtilisateurRepository;
 
@@ -28,6 +29,11 @@ public class UtilisateurServiceImpl implements IUtilisateurService {
     public List<Utilisateur> retrieveAllUtilisateur() {
         return utilisateurRepository.findAll();
     }
+    public Utilisateur retrieveUtilisateur(Long id) {
+        return utilisateurRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur introuvable avec id : " + id));
+    }
+
 
     public String login(String email, String password) {
         Utilisateur utilisateur = utilisateurRepository.findByEmail(email);

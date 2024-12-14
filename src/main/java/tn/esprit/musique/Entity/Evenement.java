@@ -21,8 +21,7 @@ public class Evenement {
     Date date_evenemnets ;
     String lieu_evenements;
     @ManyToOne
-    @JoinColumn(name = "idutilisateur", nullable = false)
+    @JoinColumn(name = "idutilisateur", nullable = true)
     Utilisateur utilisateur;
-
 
 }
