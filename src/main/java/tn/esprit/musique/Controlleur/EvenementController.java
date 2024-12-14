@@ -44,16 +44,12 @@ public class EvenementController {
         Evenement ev = evenementService.retrieveEvenement(EvenementId);
         return ev;
     }
-    @PutMapping("/{idEvenement}/assign-user")
-    public Evenement assignUtilisateurToEvenement(
-            @PathVariable Long idEvenement,
-            @RequestBody Map<String, Long> body) {
 
-        Long idUtilisateur = body.get("idUtilisateur");
-        if (idUtilisateur == null) {
-            throw new RuntimeException("L'ID de l'utilisateur est manquant !");
-        }
-        return evenementService.affecterUtilisateurAEvenement(idEvenement, idUtilisateur);
+    @PutMapping("/affecter/{Evenement-id}")
+    public void  affecteruserevenement(@PathVariable("Evenement-id") Long EvenementId,@RequestBody Long IdUtilisateur) {
+      evenementService.affecterevementutilisateur(EvenementId, IdUtilisateur);
+
+
     }
 
 

@@ -16,5 +16,5 @@ public interface IEvenementService {
     Evenement modifyEvenement(Evenement evenement);
 
     Evenement retrieveEvenement(Long EvenementId);
-    Evenement affecterUtilisateurAEvenement(Long idEvenement, Long idUtilisateur);
+    void affecterevementutilisateur ( Long IdUilisateur ,Long EvenementId);
 }

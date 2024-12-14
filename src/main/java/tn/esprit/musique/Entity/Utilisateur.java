@@ -1,5 +1,6 @@
 package tn.esprit.musique.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -23,6 +24,7 @@ public class Utilisateur {
     String password;
     @Enumerated(EnumType.STRING)
     Role role;
+    @JsonIgnore
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     List<Evenement> evenements ;
 
